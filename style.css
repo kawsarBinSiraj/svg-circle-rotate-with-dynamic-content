@@ -1,5 +1,5 @@
 #circle-main {
-    --scale: 1;
+    --scale: .8;
     position: relative;
     display: inline-block;
     transition: rotate 1s linear;
