@@ -110,3 +110,7 @@
     transform: rotate(45deg);
     z-index: -10;
 }
+
+#circle-brief td {
+    vertical-align: middle;
+}
