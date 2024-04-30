@@ -1,0 +1,112 @@
+#circle-main {
+    --scale: 1;
+    position: relative;
+    display: inline-block;
+    transition: rotate 1s linear;
+    rotate: var(--r);
+    scale: var(--scale);
+}
+
+#circle-svg path {
+    cursor: pointer;
+}
+
+#figure {
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    user-select: none;
+    pointer-events: none;
+}
+
+.figure-text {
+    position: absolute;
+    transition: transform 1s linear;
+    transform-origin: center;
+    transform: rotate(calc(var(--r) * -1));
+    z-index: 10;
+    font-size: 20px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+}
+
+.figure-widget-parent {
+    --w: 325px;
+    --r: 0deg;
+    width: var(--w);
+    aspect-ratio: 1;
+    background: transparent;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+}
+
+.figure-widget {
+    --size: calc(var(--w) / 2);
+    --offset: 225px;
+    width: calc(var(--size) + 0px);
+    aspect-ratio: 1;
+    position: absolute;
+    left: calc(var(--size) / 2);
+    top: calc(var(--size) / 2);
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.figure-widget-content {
+    transition: transform 1s linear;
+    transform-origin: center;
+    transform: rotate(calc(var(--r) * -1));
+}
+
+.figure-widget:nth-of-type(1) {
+    --degrees: calc(0 * (360deg / 6));
+}
+
+.figure-widget:nth-of-type(2) {
+    --degrees: calc(1 * (360deg / 6));
+}
+
+.figure-widget:nth-of-type(3) {
+    --degrees: calc(2 * (360deg / 6));
+}
+
+.figure-widget:nth-of-type(4) {
+    --degrees: calc(3 * (360deg / 6));
+}
+
+.figure-widget:nth-of-type(5) {
+    --degrees: calc(4 * (360deg / 6));
+}
+
+.figure-widget:nth-of-type(6) {
+    --degrees: calc(5 * (360deg / 6));
+}
+
+
+#circle-brief{
+    position: relative;
+}
+#circle-brief::after{
+    content: '';
+    display: block;
+    width: 50px;
+    aspect-ratio: 1;
+    background-color: var(--bs-info);
+    position: absolute;
+    top: calc(50% - 25px);
+    right: calc(100% - 25px);
+    transform: rotate(45deg);
+    z-index: -10;
+}
